@@ -85,7 +85,7 @@ With more visualizations and description to be found in the Jupyter Notebook.
 ## 
 ## Chord Diagrams
 I always wanted to learn how to plot chord diagrams and managed to do so for the feature analysis of the characteristics. So here is a chord diagram based on the correlation matrix of the 13 features of the songs.
-![Chord Diagrams](https://user-images.githubusercontent.com/93233240/145101888-f0f62007-be04-4429-b5eb-9b019e49735a.png)
+![Chord Diagrams](https://github.com/RachaelKilonzo/Music-Evolution/blob/main/chord_diagram.png)
 
 ##
 ## Needs more work
