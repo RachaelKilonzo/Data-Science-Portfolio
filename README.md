@@ -44,6 +44,11 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 
 --- 
 ### [HBCU-PELL-GRANTS](./HBCU-PELL-GRANTS)
+![pell grants](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/HBCU-PELL-GRANTS/HBCUPellGrants.png)
 
+---
 
 ### [Exploring Torino's Municipalities and Venues](./Exploring-Torino-Municipalities)
+![clusters](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/Exploring-Torino-Municipalities/images/torino_clusters_map.PNG)
+
+
