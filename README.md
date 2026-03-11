@@ -18,3 +18,6 @@ A curated collection of data science projects focusing on Exploratory Data Analy
 ![evolution](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/Music-Evolution/chord_diagram.png)
 
 ---
+
+### [Credit Risk Prediction Underwriting Framework](https://github.com/RachaelKilonzo/Data-Science-Portfolio/tree/main/Credit-Risk-Prediction-Underwriting-Framework)
+![Drivers](https://github.com/RachaelKilonzo/Credit-Risk-Prediction-Underwriting-Framework/blob/main/drivers.png)
