@@ -1,0 +1,170 @@
+h1,h2,h3,color,weight,codes
+World,Africa,Zimbabwe,#f58321,5,ZW
+World,Africa,Central African Republic,#f58321,2,CF
+World,Africa,Mozambique,#f58321,1,MZ
+World,Africa,Seychelles,#f58321,2,SC
+World,Africa,Senegal,#f58321,7,SN
+World,Africa,Rwanda,#f58321,2,RW
+World,Africa,Côte d'Ivoire,#f58321,5,CI
+World,Africa,Republic of the Congo,#f58321,2,CG
+World,Africa,Mali,#f58321,4,ML
+World,Africa,Kenya,#f58321,7,KE
+World,Africa,Cape Verde,#f58321,1,
+World,Africa,Democratic Republic of the Congo,#f58321,5,
+World,Africa,Eritrea,#f58321,1,ER
+World,Africa,Nigeria,#f58321,2,NG
+World,Africa,Ethiopia,#f58321,11,ET
+World,Africa,Niger,#f58321,3,NE
+World,Africa,Gabon,#f58321,2,GA
+World,Africa,Gambia,#f58321,2,GM
+World,Africa,Namibia,#f58321,2,NA
+World,Africa,Guinea,#f58321,1,GN
+World,Africa,Ghana,#f58321,2,GH
+World,Africa,Mauritius,#f58321,2,MU
+World,Africa,Cameroon,#f58321,2,CM
+World,Africa,Chad,#f58321,2,TD
+World,Africa,Angola,#f58321,1,AO
+World,Africa,South Africa,#f58321,10,ZA
+World,Africa,Burkina Faso,#f58321,3,BF
+World,Africa,Malawi,#f58321,2,MW
+World,Africa,Botswana,#f58321,2,BW
+World,Africa,Madagascar,#f58321,3,MG
+World,Africa,Uganda,#f58321,3,UG
+World,Africa,Benin,#f58321,3,BJ
+World,Africa,Lesotho,#f58321,1,LS
+World,Africa,Zambia,#f58321,1,ZM
+World,Africa,Tanzania,#f58321,7,TZ
+World,Africa,Togo,#f58321,1,TG
+World,Arab States,United Arab Emirates,#ef1621,1,AE
+World,Arab States,Iraq,#ef1621,6,IQ
+World,Arab States,Jordan,#ef1621,6,JO
+World,Arab States,Lebanon,#ef1621,6,LB
+World,Arab States,Algeria,#ef1621,7,DZ
+World,Arab States,Yemen,#ef1621,5,YE
+World,Arab States,Jerusalem (proposed by Jordan),#ef1621,1,
+World,Arab States,Tunisia,#ef1621,9,TN
+World,Arab States,Morocco,#ef1621,9,MA
+World,Arab States,Oman,#ef1621,5,OM
+World,Arab States,Mauritania,#ef1621,2,MR
+World,Arab States,Palestine,#ef1621,4,
+World,Arab States,Bahrain,#ef1621,3,BH
+World,Arab States,Libya,#ef1621,5,LY
+World,Arab States,Qatar,#ef1621,1,QA
+World,Arab States,Syria,#ef1621,6,SY
+World,Arab States,Saudi Arabia,#ef1621,7,SA
+World,Arab States,Sudan,#ef1621,3,SD
+World,Arab States,Egypt,#ef1621,7,EG
+World,Asia and the Pacific,Micronesia,#77bc45,1,
+World,Asia and the Pacific,Mongolia,#77bc45,6,MN
+World,Asia and the Pacific,Malaysia,#77bc45,4,MY
+World,Asia and the Pacific,Marshall Islands,#77bc45,1,MH
+World,Asia and the Pacific,Papua New Guinea,#77bc45,1,PG
+World,Asia and the Pacific,Nepal,#77bc45,4,NP
+World,Asia and the Pacific,Vietnam,#77bc45,8,VN
+World,Asia and the Pacific,Vanuatu,#77bc45,1,VU
+World,Asia and the Pacific,Uzbekistan,#77bc45,7,UZ
+World,Asia and the Pacific,Turkmenistan,#77bc45,5,TM
+World,Asia and the Pacific,Thailand,#77bc45,7,TH
+World,Asia and the Pacific,Tajikistan,#77bc45,4,TJ
+World,Asia and the Pacific,Sri Lanka,#77bc45,8,LK
+World,Asia and the Pacific,South Korea,#77bc45,16,KR
+World,Asia and the Pacific,Solomon Islands,#77bc45,1,SB
+World,Asia and the Pacific,Singapore,#77bc45,1,SG
+World,Asia and the Pacific,Philippines,#77bc45,6,PH
+World,Asia and the Pacific,Palau,#77bc45,1,PW
+World,Asia and the Pacific,Pakistan,#77bc45,6,PK
+World,Asia and the Pacific,North Korea,#77bc45,2,KP
+World,Asia and the Pacific,New Zealand,#77bc45,3,NZ
+World,Asia and the Pacific,Myanmar,#77bc45,2,MM
+World,Asia and the Pacific,Laos,#77bc45,3,LA
+World,Asia and the Pacific,Afghanistan,#77bc45,2,AF
+World,Asia and the Pacific,Kiribati,#77bc45,1,KI
+World,Asia and the Pacific,Cambodia,#77bc45,4,KH
+World,Asia and the Pacific,Bangladesh,#77bc45,3,BD
+World,Asia and the Pacific,Fiji,#77bc45,1,FJ
+World,Asia and the Pacific,Australia,#77bc45,20,AU
+World,Asia and the Pacific,India,#77bc45,42,IN
+World,Asia and the Pacific,Indonesia,#77bc45,10,ID
+World,Asia and the Pacific,Iran,#77bc45,27,IR
+World,Asia and the Pacific,China,#77bc45,57,CN
+World,Asia and the Pacific,Kyrgyzstan,#77bc45,3,KG
+World,Asia and the Pacific,Japan,#77bc45,25,JP
+World,Asia and the Pacific,Kazakhstan,#77bc45,6,KZ
+World,Europe and North America,Russia,#4aaaea,31,
+World,Europe and North America,Romania,#4aaaea,9,RO
+World,Europe and North America,Bulgaria,#4aaaea,10,BG
+World,Europe and North America,Croatia,#4aaaea,10,HR
+World,Europe and North America,Serbia,#4aaaea,5,RS
+World,Europe and North America,Canada,#4aaaea,22,CA
+World,Europe and North America,Slovakia,#4aaaea,8,SK
+World,Europe and North America,Slovenia,#4aaaea,5,SI
+World,Europe and North America,Portugal,#4aaaea,17,PT
+World,Europe and North America,San Marino,#4aaaea,1,SM
+World,Europe and North America,Spain,#4aaaea,50,ES
+World,Europe and North America,Belgium,#4aaaea,16,BE
+World,Europe and North America,Sweden,#4aaaea,15,SE
+World,Europe and North America,Switzerland,#4aaaea,13,CH
+World,Europe and North America,Poland,#4aaaea,17,PL
+World,Europe and North America,Belarus,#4aaaea,4,BY
+World,Europe and North America,Azerbaijan,#4aaaea,5,AZ
+World,Europe and North America,Turkey,#4aaaea,21,
+World,Europe and North America,Austria,#4aaaea,12,AT
+World,Europe and North America,Ukraine,#4aaaea,8,UA
+World,Europe and North America,Armenia,#4aaaea,3,AM
+World,Europe and North America,United Kingdom,#4aaaea,33,GB
+World,Europe and North America,United States,#4aaaea,25,US
+World,Europe and North America,Vatican City,#4aaaea,2,
+World,Europe and North America,Andorra,#4aaaea,1,AD
+World,Europe and North America,Albania,#4aaaea,4,AL
+World,Europe and North America,Bosnia and Herzegovina,#4aaaea,4,BA
+World,Europe and North America,Cyprus,#4aaaea,3,CY
+World,Europe and North America,Lithuania,#4aaaea,5,LT
+World,Europe and North America,Ireland,#4aaaea,2,IE
+World,Europe and North America,Iceland,#4aaaea,3,IS
+World,Europe and North America,France,#4aaaea,52,FR
+World,Europe and North America,Netherlands,#4aaaea,13,NL
+World,Europe and North America,Finland,#4aaaea,7,FI
+World,Europe and North America,Malta,#4aaaea,3,MT
+World,Europe and North America,Estonia,#4aaaea,2,EE
+World,Europe and North America,Montenegro,#4aaaea,4,ME
+World,Europe and North America,Israel,#4aaaea,9,IL
+World,Europe and North America,North Macedonia,#4aaaea,2,MK
+World,Europe and North America,Georgia,#4aaaea,4,GE
+World,Europe and North America,Luxembourg,#4aaaea,1,LU
+World,Europe and North America,Hungary,#4aaaea,8,HU
+World,Europe and North America,Greece,#4aaaea,19,GR
+World,Europe and North America,Italy,#4aaaea,59,IT
+World,Europe and North America,Moldova,#4aaaea,1,MD
+World,Europe and North America,Denmark,#4aaaea,11,DK
+World,Europe and North America,Latvia,#4aaaea,3,LV
+World,Europe and North America,Czech Republic,#4aaaea,17,CZ
+World,Europe and North America,Norway,#4aaaea,8,NO
+World,Europe and North America,Germany,#4aaaea,52,DE
+World,Latin America & the Caribbean,Mexico,#00acad,35,MX
+World,Latin America & the Caribbean,Honduras,#00acad,2,HN
+World,Latin America & the Caribbean,Paraguay,#00acad,1,PY
+World,Latin America & the Caribbean,Argentina,#00acad,12,AR
+World,Latin America & the Caribbean,Antigua and Barbuda,#00acad,1,AG
+World,Latin America & the Caribbean,Venezuela,#00acad,3,VE
+World,Latin America & the Caribbean,Jamaica,#00acad,1,JM
+World,Latin America & the Caribbean,Uruguay,#00acad,3,UY
+World,Latin America & the Caribbean,Barbados,#00acad,1,BB
+World,Latin America & the Caribbean,Suriname,#00acad,3,SR
+World,Latin America & the Caribbean,Belize,#00acad,1,BZ
+World,Latin America & the Caribbean,Panama,#00acad,5,PA
+World,Latin America & the Caribbean,Dominica,#00acad,1,DM
+World,Latin America & the Caribbean,Dominican Republic,#00acad,1,DO
+World,Latin America & the Caribbean,Ecuador,#00acad,5,EC
+World,Latin America & the Caribbean,Costa Rica,#00acad,4,CR
+World,Latin America & the Caribbean,Saint Kitts and Nevis,#00acad,1,KN
+World,Latin America & the Caribbean,Saint Lucia,#00acad,1,LC
+World,Latin America & the Caribbean,Colombia,#00acad,9,CO
+World,Latin America & the Caribbean,El Salvador,#00acad,1,SV
+World,Latin America & the Caribbean,Chile,#00acad,7,CL
+World,Latin America & the Caribbean,Nicaragua,#00acad,2,NI
+World,Latin America & the Caribbean,Brazil,#00acad,23,BR
+World,Latin America & the Caribbean,Bolivia,#00acad,7,BO
+World,Latin America & the Caribbean,Peru,#00acad,13,PE
+World,Latin America & the Caribbean,Guatemala,#00acad,4,GT
+World,Latin America & the Caribbean,Haiti,#00acad,1,HT
+World,Latin America & the Caribbean,Cuba,#00acad,9,CU

@@ -1,0 +1,67 @@
+---
+title: "Voronoi (UNESCO Cultural Heritage)"
+author: "Rachael Kilonzo"
+date: "2024-06-12"
+output: html_document
+---
+
+Install Packages
+
+```{r}
+
+#install.packages("voronoiTreemap")
+#install.packages("tidyverse")
+#install.packages("dplyr")
+#install.packages("jsonlite")
+
+```
+
+Load Packages
+
+```{r}
+
+library(tidyverse)
+library(voronoiTreemap)
+library(dplyr)
+library(jsonlite)
+library(knitr)
+library(htmlwidgets)
+library(htmltools)
+```
+
+Import the csv file scraped using python's BeautifulSoup and create a data frame called Heritage and a bit of cleaning.
+
+```{r}
+
+Heritage = data.frame(read_csv("C:/Users/PC/Desktop/Projects/Cultural Heritage/Cultural_Heritage_Count.csv"))
+
+
+#Replace the NA values with 0
+
+Heritage = Heritage %>%
+  mutate_all(~replace(., is.na(.), 0))
+
+```
+
+
+```{r}
+
+AllHeritageSites = data.frame(read_csv("C:/Users/PC/Desktop/Projects/Cultural Heritage/TotalSites.csv"))
+
+```
+
+
+```{r}
+
+total_json = vt_export_json(vt_input_from_df(AllHeritageSites, scaleToPerc = FALSE))
+
+vt_plot = vt_d3(total_json, legend = TRUE, legend_title = "UNESCO Regions", seed = 1, width = 1000, height = 800)
+
+save_html(vt_plot, file = "voronoi_treemap_visualization.html")
+```
+
+```{r}
+
+
+```
+

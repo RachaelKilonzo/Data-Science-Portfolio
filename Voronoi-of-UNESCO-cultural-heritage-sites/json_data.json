@@ -1,0 +1,711 @@
+{
+    "name": "world",
+    "children": [
+        {
+            "name": "Africa",
+            "color": "#f58321",
+            "children": [
+                {
+                    "COUNTRY": "Zimbabwe",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Central African Republic",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Mozambique",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Seychelles",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Senegal",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Rwanda",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "C\u00f4te d'Ivoire",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Republic of the Congo",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Mali",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Kenya",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Cape Verde",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Democratic Republic of the Congo",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Eritrea",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Nigeria",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Ethiopia",
+                    "TOTAL SITES": "11"
+                },
+                {
+                    "COUNTRY": "Niger",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Gabon",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Gambia",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Namibia",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Guinea",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Ghana",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Mauritius",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Cameroon",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Chad",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Angola",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "South Africa",
+                    "TOTAL SITES": "10"
+                },
+                {
+                    "COUNTRY": "Burkina Faso",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Malawi",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Botswana",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Madagascar",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Uganda",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Benin",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Lesotho",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Zambia",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Tanzania",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Togo",
+                    "TOTAL SITES": "1"
+                }
+            ]
+        },
+        {
+            "name": "Arab States",
+            "color": "#ef1621",
+            "children": [
+                {
+                    "COUNTRY": "United Arab Emirates",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Iraq",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Jordan",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Lebanon",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Algeria",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Yemen",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Jerusalem (proposed by Jordan)",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Tunisia",
+                    "TOTAL SITES": "9"
+                },
+                {
+                    "COUNTRY": "Morocco",
+                    "TOTAL SITES": "9"
+                },
+                {
+                    "COUNTRY": "Oman",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Mauritania",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Palestine",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Bahrain",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Libya",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Qatar",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Syria",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Saudi Arabia",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Sudan",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Egypt",
+                    "TOTAL SITES": "7"
+                }
+            ]
+        },
+        {
+            "name": "Asia and the Pacific",
+            "color": "#77bc45",
+            "children": [
+                {
+                    "COUNTRY": "Micronesia",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Mongolia",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Malaysia",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Marshall Islands",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Papua New Guinea",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Nepal",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Vietnam",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "Vanuatu",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Uzbekistan",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Turkmenistan",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Thailand",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Tajikistan",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Sri Lanka",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "South Korea",
+                    "TOTAL SITES": "16"
+                },
+                {
+                    "COUNTRY": "Solomon Islands",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Singapore",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Philippines",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "Palau",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Pakistan",
+                    "TOTAL SITES": "6"
+                },
+                {
+                    "COUNTRY": "North Korea",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "New Zealand",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Myanmar",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Laos",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Afghanistan",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Kiribati",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Cambodia",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Bangladesh",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Fiji",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Australia",
+                    "TOTAL SITES": "20"
+                },
+                {
+                    "COUNTRY": "India",
+                    "TOTAL SITES": "42"
+                },
+                {
+                    "COUNTRY": "Indonesia",
+                    "TOTAL SITES": "10"
+                },
+                {
+                    "COUNTRY": "Iran",
+                    "TOTAL SITES": "27"
+                },
+                {
+                    "COUNTRY": "China",
+                    "TOTAL SITES": "57"
+                },
+                {
+                    "COUNTRY": "Kyrgyzstan",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Japan",
+                    "TOTAL SITES": "25"
+                },
+                {
+                    "COUNTRY": "Kazakhstan",
+                    "TOTAL SITES": "6"
+                }
+            ]
+        },
+        {
+            "name": "Europe and North America",
+            "color": "#4aaaea",
+            "children": [
+                {
+                    "COUNTRY": "Russia",
+                    "TOTAL SITES": "31"
+                },
+                {
+                    "COUNTRY": "Romania",
+                    "TOTAL SITES": "9"
+                },
+                {
+                    "COUNTRY": "Bulgaria",
+                    "TOTAL SITES": "10"
+                },
+                {
+                    "COUNTRY": "Croatia",
+                    "TOTAL SITES": "10"
+                },
+                {
+                    "COUNTRY": "Serbia",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Canada",
+                    "TOTAL SITES": "22"
+                },
+                {
+                    "COUNTRY": "Slovakia",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "Slovenia",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Portugal",
+                    "TOTAL SITES": "17"
+                },
+                {
+                    "COUNTRY": "San Marino",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Spain",
+                    "TOTAL SITES": "50"
+                },
+                {
+                    "COUNTRY": "Belgium",
+                    "TOTAL SITES": "16"
+                },
+                {
+                    "COUNTRY": "Sweden",
+                    "TOTAL SITES": "15"
+                },
+                {
+                    "COUNTRY": "Switzerland",
+                    "TOTAL SITES": "13"
+                },
+                {
+                    "COUNTRY": "Poland",
+                    "TOTAL SITES": "17"
+                },
+                {
+                    "COUNTRY": "Belarus",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Azerbaijan",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Turkey",
+                    "TOTAL SITES": "21"
+                },
+                {
+                    "COUNTRY": "Austria",
+                    "TOTAL SITES": "12"
+                },
+                {
+                    "COUNTRY": "Ukraine",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "Armenia",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "United Kingdom",
+                    "TOTAL SITES": "33"
+                },
+                {
+                    "COUNTRY": "United States",
+                    "TOTAL SITES": "25"
+                },
+                {
+                    "COUNTRY": "Vatican City",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Andorra",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Albania",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Bosnia and Herzegovina",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Cyprus",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Lithuania",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Ireland",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Iceland",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "France",
+                    "TOTAL SITES": "52"
+                },
+                {
+                    "COUNTRY": "Netherlands",
+                    "TOTAL SITES": "13"
+                },
+                {
+                    "COUNTRY": "Finland",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Malta",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Estonia",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Montenegro",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Israel",
+                    "TOTAL SITES": "9"
+                },
+                {
+                    "COUNTRY": "North Macedonia",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Georgia",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Luxembourg",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Hungary",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "Greece",
+                    "TOTAL SITES": "19"
+                },
+                {
+                    "COUNTRY": "Italy",
+                    "TOTAL SITES": "59"
+                },
+                {
+                    "COUNTRY": "Moldova",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Denmark",
+                    "TOTAL SITES": "11"
+                },
+                {
+                    "COUNTRY": "Latvia",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Czech Republic",
+                    "TOTAL SITES": "17"
+                },
+                {
+                    "COUNTRY": "Norway",
+                    "TOTAL SITES": "8"
+                },
+                {
+                    "COUNTRY": "Germany",
+                    "TOTAL SITES": "52"
+                }
+            ]
+        },
+        {
+            "name": "Latin America & the Caribbean",
+            "color": "#00acad",
+            "children": [
+                {
+                    "COUNTRY": "Mexico",
+                    "TOTAL SITES": "35"
+                },
+                {
+                    "COUNTRY": "Honduras",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Paraguay",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Argentina",
+                    "TOTAL SITES": "12"
+                },
+                {
+                    "COUNTRY": "Antigua and Barbuda",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Venezuela",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Jamaica",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Uruguay",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Barbados",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Suriname",
+                    "TOTAL SITES": "3"
+                },
+                {
+                    "COUNTRY": "Belize",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Panama",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Dominica",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Dominican Republic",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Ecuador",
+                    "TOTAL SITES": "5"
+                },
+                {
+                    "COUNTRY": "Costa Rica",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Saint Kitts and Nevis",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Saint Lucia",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Colombia",
+                    "TOTAL SITES": "9"
+                },
+                {
+                    "COUNTRY": "El Salvador",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Chile",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Nicaragua",
+                    "TOTAL SITES": "2"
+                },
+                {
+                    "COUNTRY": "Brazil",
+                    "TOTAL SITES": "23"
+                },
+                {
+                    "COUNTRY": "Bolivia",
+                    "TOTAL SITES": "7"
+                },
+                {
+                    "COUNTRY": "Peru",
+                    "TOTAL SITES": "13"
+                },
+                {
+                    "COUNTRY": "Guatemala",
+                    "TOTAL SITES": "4"
+                },
+                {
+                    "COUNTRY": "Haiti",
+                    "TOTAL SITES": "1"
+                },
+                {
+                    "COUNTRY": "Cuba",
+                    "TOTAL SITES": "9"
+                }
+            ]
+        }
+    ]
+}
