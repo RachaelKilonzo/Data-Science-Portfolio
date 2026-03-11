@@ -45,8 +45,5 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 --- 
 ### [HBCU-PELL-GRANTS](./HBCU-PELL-GRANTS)
 
----
-
 
 ### [Exploring Torino's Municipalities and Venues](./Exploring-Torino-Municipalities)
-
