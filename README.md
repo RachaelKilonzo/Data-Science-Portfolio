@@ -8,4 +8,4 @@ A curated collection of data science projects focusing on Exploratory Data Analy
 ### [Tokyo-Decathlon](https://github.com/RachaelKilonzo/Data-Science-Portfolio/tree/main/Tokyo-Decathlon)
 
 ### [Olympics-Marathon](https://github.com/RachaelKilonzo/Data-Science-Portfolio/tree/main/Olympics-Marathon)
-
+![marathon times plot](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/Olympics-Marathon/marathon.png)
