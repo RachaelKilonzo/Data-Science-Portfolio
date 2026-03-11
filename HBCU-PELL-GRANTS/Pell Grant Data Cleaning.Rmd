@@ -1,0 +1,599 @@
+---
+title: "Pell Grants for HBCUs"
+output: html_document
+date: "2024-07-06"
+---
+
+
+```{r}
+
+install.packages("readxl")
+
+```
+
+
+
+```{r}
+
+# Load the necessary libraries
+library(readxl)
+library(tidyverse)
+library(showtext)
+library(dplyr)
+
+
+
+```
+
+1999-2000 Pell Grants Data Cleaning
+
+```{r}
+
+pell99_00 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell99-00.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell99_00 = pell99_00[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell99_00) = pell99_00[1, ]
+
+#Remove Unnecessary Rows
+pell99_00 = pell99_00[-1, ]
+
+#Rearrange Column order
+my_columns = c("State", "Institution", "Awards", "Recipients")
+pell99_00 = pell99_00[, my_columns]
+
+#Add new column for the grant session and grant year
+pell99_00$Session = "1999-2000"
+pell99_00$Year = 1999
+
+```
+
+2000-2001 Pell Grants Data Cleaning
+
+```{r}
+
+pell00_01 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell00-01.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell00_01 = pell00_01[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell00_01) = pell00_01[1, ]
+
+#Remove Unnecessary Rows
+pell00_01 = pell00_01[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Institution", "Awards", "Recipients")
+pell00_01 = pell00_01[, my_columns]
+
+#Add new column for the grant session and grant year
+pell00_01$Session = "2000-2001"
+pell00_01$Year = 2000
+
+#merge the new dataframes
+pell_grant = bind_rows(pell99_00, pell00_01)
+
+```
+
+2001-2002 Pell Grants Data Cleaning
+
+```{r}
+
+pell01_02 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell01-02.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell01_02 = pell01_02[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell01_02) = pell01_02[1, ]
+
+#Remove Unnecessary Rows and Columns
+pell01_02 = pell01_02[-1, ]
+
+#Rearrange Column order
+my_columns = c("State", "Institution", "Awards", "Recipients")
+pell01_02 = pell01_02[, my_columns]
+
+#Add new column for the grant session and grant year
+pell01_02$Session = "2001-2002"
+pell01_02$Year = 2001
+
+pell_grant = bind_rows(pell_grant, pell01_02)
+
+```
+
+2002-2003 Pell Grants Data Cleaning
+
+```{r}
+
+pell02_03 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell02-03.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell02_03 = pell02_03[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell02_03) = pell02_03[1, ]
+
+#Remove Unnecessary Rows
+pell02_03 = pell02_03[-1, ]
+
+#Rearrange Column order
+my_columns = c("State", "Institution", "Awards", "Recipients")
+pell02_03 = pell02_03[, my_columns]
+
+#Add new column for the grant session and grant year
+pell02_03$Session = "2002-2003"
+pell02_03$Year = 2002
+
+pell_grant = bind_rows(pell_grant, pell02_03)
+
+```
+
+2003-2004 Pell Grants Data Cleaning
+
+```{r}
+
+pell03_04 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell03-04.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell03_04 = pell03_04[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell03_04) = pell03_04[1, ]
+
+#Remove Unnecessary Rows and Columns
+pell03_04 = pell03_04[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Institution", "Awards", "Recipients")
+pell03_04 = pell03_04[, my_columns]
+
+#Add new column for the grant session and grant year
+pell03_04$Session = "2003-2004"
+pell03_04$Year = 2003
+
+pell_grant = bind_rows(pell_grant, pell03_04)
+
+```
+
+2004 - 2005 Pell Grant Data Cleaning
+
+```{r}
+
+pell04_05 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell04-05.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell04_05 = pell04_05[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell04_05) = pell04_05[1, ]
+
+#Remove Unnecessary Rows
+pell04_05 = pell04_05[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recipients")
+pell04_05 = pell04_05[, my_columns]
+
+#Rename the Column "Name" to Institution
+
+colnames(pell04_05) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell04_05$Session = "2004-2005"
+pell04_05$Year = 2004
+
+pell_grant = bind_rows(pell_grant, pell04_05)
+
+
+```
+
+2005 - 2006 Pell Grants Data Cleaning
+
+```{r}
+
+pell05_06 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell05-06.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell05_06 = pell05_06[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell05_06) = pell05_06[1, ]
+
+#Remove Unnecessary Rows
+pell05_06 = pell05_06[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recipients")
+pell05_06 = pell05_06[, my_columns]
+
+#Rename the Column "Name" to Institution
+
+colnames(pell05_06) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell05_06$Session = "2005-2006"
+pell05_06$Year = 2005
+
+pell_grant = bind_rows(pell_grant, pell05_06)
+
+
+```
+
+2006 - 2007 Pell Grants Data Cleaning
+
+```{r}
+
+#Read the data
+pell06_07 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell06-07.xls', col_names = FALSE)
+
+# Set the first row as column names
+colnames(pell06_07) = pell06_07[1, ]
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recipients")
+pell06_07 = pell06_07[, my_columns]
+#Rename the Column "Name" to Institution
+colnames(pell06_07) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell06_07$Session = "2006-2007"
+pell06_07$Year = 2006
+
+pell_grant = bind_rows(pell_grant, pell06_07)
+
+```
+
+
+2007 - 2008 Pell Grants Data Cleaning
+
+```{r}
+
+pell07_08 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell07-08.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell07_08 = pell07_08[-c(1,2,3,4,5,7),]
+
+# Set the first row as column names
+colnames(pell07_08) = pell07_08[1, ]
+
+#Remove Unnecessary Rows
+pell07_08 = pell07_08[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recips")
+pell07_08 = pell07_08[, my_columns]
+
+#Rename the Column "Name" to Institution
+
+colnames(pell07_08) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell07_08$Session = "2007-2008"
+pell07_08$Year = 2007
+
+pell_grant = bind_rows(pell_grant, pell07_08)
+
+```
+
+2008 - 2009 Pell Grants Data Cleaning
+
+```{r}
+
+pell08_09 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell08-09.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell08_09 = pell08_09[-c(1,2,3,4,6),]
+
+# Set the first row as column names
+colnames(pell08_09) = pell08_09[1, ]
+
+#Remove Unnecessary Rows
+pell08_09 = pell08_09[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recipients")
+pell08_09 = pell08_09[, my_columns]
+
+#Rename the Column "Name" to Institution
+
+colnames(pell08_09) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell08_09$Session = "2008-2009"
+pell08_09$Year = 2008
+
+pell_grant = bind_rows(pell_grant, pell08_09)
+
+```
+
+2009 - 2010 Pell Grants Data Cleaning
+
+```{r}
+
+pell09_10 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell09-10.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell09_10 = pell09_10[-c(1,2,3,4,6),]
+
+# Set the first row as column names
+colnames(pell09_10) = pell09_10[1, ]
+
+#Remove Unnecessary Rows
+pell09_10 = pell09_10[-1, ]
+
+
+#Rearrange Column order
+my_columns = c("State", "Name", "Awards", "Recips")
+pell09_10 = pell09_10[, my_columns]
+
+#Rename the Column "Name" to Institution
+
+colnames(pell09_10) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell09_10$Session = "2009-2010"
+pell09_10$Year = 2009
+
+pell_grant = bind_rows(pell_grant, pell09_10)
+
+
+```
+
+2010 - 2011 Pell Grants Data Cleaning
+
+```{r}
+
+pell10_11 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell10-11.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell10_11 = pell10_11[-c(1,2,3,4,5),]
+
+# Set the first row as column names
+colnames(pell10_11) = pell10_11[1, ]
+
+#Remove Unnecessary Rows
+pell10_11= pell10_11[-1, ]
+
+#Rearrange Column order
+my_columns = c("STATE", "NAME", "Awards", "Recipients")
+pell10_11 = pell10_11[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell10_11) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell10_11$Session = "2010-2011"
+pell10_11$Year = 2010
+
+pell_grant = bind_rows(pell_grant, pell10_11)
+
+```
+
+2011 - 2012 Pell Grants Data Cleaning
+
+```{r}
+
+pell11_12 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell11-12.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell11_12 = pell11_12[-c(1,2),]
+
+# Set the first row as column names
+colnames(pell11_12) = pell11_12[1, ]
+
+#Remove Unnecessary Rows
+pell11_12= pell11_12[-1, ]
+
+#Rearrange Column order
+my_columns = c("STATE", "NAME", "Awards", "Recips")
+pell11_12= pell11_12[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell11_12) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell11_12$Session = "2011-2012"
+pell11_12$Year = 2011
+
+pell_grant = bind_rows(pell_grant, pell11_12)
+
+
+```
+
+2012 - 2013 Pell Grants Data Cleaning
+
+```{r}
+
+pell12_13 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell12-13.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell12_13 = pell12_13[-c(1,2,3),]
+
+# Set the first row as column names
+colnames(pell12_13) = pell12_13[1, ]
+
+#Remove Unnecessary Rows
+pell12_13 = pell12_13[-1, ]
+
+#Rearrange Column order
+my_columns = c("Institution State", "Institution Name", "Total Awards", "Total Recipients")
+pell12_13= pell12_13[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell12_13) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell12_13$Session = "2012-2013"
+pell12_13$Year = 2012
+
+pell_grant = bind_rows(pell_grant, pell12_13)
+
+```
+
+2013 - 2014 Pell Grants Data Cleaning
+
+```{r}
+
+pell13_14 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell13-14.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell13_14 = pell13_14[-c(1:5),]
+
+# Set the first row as column names
+colnames(pell13_14) = pell13_14[1, ]
+
+#Remove Unnecessary Rows
+pell13_14 = pell13_14[-1, ]
+
+#Rearrange Column order
+my_columns = c("STATE", "NAME", "Total Awards", "Total Recipients")
+pell13_14 = pell13_14[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell13_14) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell13_14$Session = "2013-2014"
+pell13_14$Year = 2013
+
+pell_grant = bind_rows(pell_grant,pell13_14)
+
+```
+
+2014 - 2015 Pell Grants Data Cleaning
+
+```{r}
+
+pell14_15 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell14-15.xls', col_names = FALSE)
+
+#Remove Empty Rows
+pell14_15  = pell14_15[-c(1:4),]
+
+# Set the first row as column names
+colnames(pell14_15) = pell14_15[1, ]
+
+#Remove Unnecessary Rows
+pell14_15 = pell14_15[-1, ]
+
+#Rearrange Column order
+my_columns = c("Institution_State", "Institution_Name", "Total_Awards", "Total_Recipients")
+pell14_15 = pell14_15[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell14_15) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell14_15$Session = "2014-2015"
+pell14_15$Year = 2014
+
+pell_grant = bind_rows(pell_grant,pell14_15)
+
+```
+
+2015 - 2016 Pell Grants Data Cleaning
+
+```{r}
+
+pell15_16 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell15-16.xlsx', col_names = FALSE)
+
+#Remove Empty Rows
+pell15_16 = pell15_16[-c(1:5),]
+
+# Set the first row as column names
+colnames(pell15_16) = pell15_16[1, ]
+
+#Remove Unnecessary Rows
+pell15_16 = pell15_16[-1, ]
+
+#Rearrange Column order
+my_columns = c("Institution State", "Institution Name", "Total Awards", "Total Recipients")
+pell15_16 = pell15_16[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell15_16) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell15_16$Session = "2015-2016"
+pell15_16$Year = 2015
+
+pell_grant = bind_rows(pell_grant,pell15_16)
+
+```
+
+2016 - 2017 Pell Grants Data Cleaning
+
+```{r}
+
+pell16_17 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell16-17.xlsx', col_names = FALSE)
+
+#Remove Empty Rows
+pell16_17 = pell16_17[-c(1:4),]
+
+# Set the first row as column names
+colnames(pell16_17) = pell16_17[1, ]
+
+#Remove Unnecessary Rows
+pell16_17 = pell16_17[-1, ]
+
+#Rearrange Column order
+my_columns = c("INSTITUTION STATE", "INSTITUTION NAME", "TOTAL AWARDS", "TOTAL RECIPIENTS")
+pell16_17 = pell16_17[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell16_17) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell16_17$Session = "2016-2017"
+pell16_17$Year = 2016
+
+pell_grant = bind_rows(pell_grant,pell16_17)
+
+```
+
+2017 - 2018 Pell Grants Data Cleaning
+
+```{r}
+
+pell17_18 = read_excel('C:/Users/PC/Desktop/Portfolio/Pell Grants/pell17-18.xlsx', col_names = FALSE)
+
+#Remove Empty Rows
+pell17_18 = pell17_18[-c(1:4),]
+
+# Set the first row as column names
+colnames(pell17_18) = pell17_18[1, ]
+
+#Remove Unnecessary Rows
+pell17_18 = pell17_18[-1, ]
+
+#Rearrange Column order
+my_columns = c("INSTITUTION STATE", "INSTITUTION NAME", "TOTAL AWARDS", "TOTAL RECIPIENTS")
+pell17_18 = pell17_18[, my_columns]
+
+#Rename the Column "Name" to Institution
+colnames(pell17_18) = c("State", "Institution", "Awards", "Recipients")
+
+#Add new column for the grant session and grant year
+pell17_18$Session = "2017-2018"
+pell17_18$Year = 2017
+
+pell_grant = bind_rows(pell_grant,pell17_18)
+
+```
+
+```{r}
+
+write.csv(pell_grant, "C:/Users/PC/Desktop/Portfolio/Pell Grants/pell_grants.csv", row.names = FALSE)
+
+```
+
+

@@ -1,0 +1,149 @@
+---
+title: "Pell Grants"
+output: html_document
+date: "2024-07-07"
+---
+
+```{r}
+
+install.packages("ggtext")
+
+```
+
+# Load your libraries
+
+```{r}
+
+library(tidyverse)
+library(showtext)
+library(ggtext)
+library(sysfonts)
+
+```
+
+# Aes
+
+```{r}
+
+showtext_auto()
+#font_add_google("Advent Pro")
+#font = "Advent Pro"
+font_add_google("Allura")
+font = "Allura"
+
+```
+
+Read the csv file
+
+```{r}
+
+pell_grants = read.csv("C:/Users/PC/Desktop/Portfolio/Pell Grants/pell_grants.csv")
+
+HbcuColours = c("#114488", "#E51937","#F4811F" ,"#a21609", "#840028", "#ffc530", "#265198", "#004684", "#580F1A", "#0099CC")
+
+```
+
+
+Extract the data for only the HBCUs
+
+```{r}
+
+pell_grants = pell_grants %>%
+  filter(!(is.na(State) & Institution == "TOTALS"))
+
+pell_grants = pell_grants %>%
+  mutate(Institution = tolower(Institution))
+
+
+hbcu_list = c("spelman college", "howard university", "florida agricultural & mechanical univ", "florida a & m university", "tuskegee university", "morehouse college", "xavier university of louisiana", "xavier university of louisana", "hampton university", "north carolina agricultural and technical state university", "north carolina agricultural and technical state unive", "north carolina a&t state univ", "claflin university", "claflin college", "delaware state university")
+
+hbcu = pell_grants %>%
+  filter(Institution %in% hbcu_list) %>%
+  mutate(Institution = case_when(Institution == "spelman college" ~ "Spelman",
+                                 Institution == "howard university" ~ "Howard",
+                                 Institution %in% c("florida agricultural & mechanical univ", "florida a & m university") ~ "Florida A&M",
+                                 Institution == "tuskegee university" ~ "Tuskegee",
+                                 Institution == "morehouse college" ~ "Morehouse",
+                                 Institution %in% c("xavier university of louisiana", "xavier university of louisana") ~ "Xavier University of Louisiana",
+                                 Institution == "hampton university" ~ "Hampton",
+                                 Institution %in% c("north carolina agricultural and technical state university", "north carolina agricultural and technical state unive", "north carolina a&t state univ") ~ "North Carolina A&T",
+                                 Institution %in% c("claflin university", "claflin college") ~ "Claflin",
+                                 Institution == "delaware state university" ~ "Delaware State"))
+
+
+```
+
+Confirmation that all the universities are present with the right count of years where the data is available for 19 years
+
+```{r}
+university = c("Spelman", "Howard", "Florida A&M", "Tuskegee", "Morehouse", "Xavier University of Louisiana", "Hampton", "North Carolina A&T", "Claflin", "Delaware State")
+# Create a regex pattern that matches any of the select university names
+pattern = paste(university, collapse = "|")
+
+# Use grep to find rows with any of the university names in the 'Institution' column
+matching_rows = hbcu[grep(pattern, hbcu$Institution, ignore.case = TRUE), ]
+
+# Count occurrences of each institution
+institution_counts = table(matching_rows$Institution)
+
+# Convert to a dataframe for better readability
+institution_counts_df = as.data.frame(institution_counts)
+
+```
+
+
+
+```{r}
+
+# Convert Recipients to numeric
+hbcu$Recipients = as.numeric(hbcu$Recipients)
+# Convert Awards to numeric
+hbcu$Awards = as.numeric(hbcu$Awards)
+# Ensure Year is also numeric if not already
+hbcu$Year = as.numeric(hbcu$Year) 
+
+ggplot() +
+  geom_point(data = hbcu, aes(x = Year, y = Awards, colour = Institution, size = Recipients)) +
+  scale_colour_manual(values = HbcuColours) + 
+  scale_size(range = c(6, 12), labels = scales::comma) +
+  expand_limits(y = 40000000) +
+  scale_y_continuous(labels = scales::dollar, breaks = seq(1200000, 40000000, length = 12)) +
+  facet_wrap(~Institution, ncol = 2, labeller = labeller(.rows = as_labeller(~glue::glue ("<span style = 'colour: {HbcuColours};'>{.x} </span>")))) +
+  ggtitle("Top 10 HBCU Pell Grants",
+          subtitle = "\nTotal Amount of Pell Grants Awarded to Students at Top HBCUs from 1999-2017. \nPoints are sized to reflect the total number of recipients receiving grants at each university.") +
+  labs(y = "", x = "", size = "Number of Recipients", caption = "Source : U.S. Department of Education | GitHub : RachaelKilonzo | Inspiration : BlakeRMills") +
+  theme(plot.title = element_text(size = 400, face = "bold", hjust = 0.5, family = font, colour = "#300000"),
+        plot.subtitle = element_text(size = 200, hjust = 0.5, family = font, lineheight = 0.4, colour = "#300000"),
+        plot.margin = margin(2, 2, 3, 1.5, "cm"),
+        plot.background = element_rect(fill="#f5eee3"),
+        plot.caption = element_text(hjust = 0.5, family = font, face = "bold", size = 200, vjust = -2, colour = "#300000"),
+        panel.background = element_blank(),
+        panel.grid.major = element_line(colour = "grey", size = 1.5, linetype = "dashed"),
+        panel.grid.minor = element_blank(),
+        panel.spacing = unit(4, "lines"),
+        strip.text = ggtext::element_textbox(size = 150, face = "bold", family = font, colour = "#300000"),
+        strip.background = element_blank(),
+        axis.text.x = element_text(size = 100, family = font, face = "bold", colour = "#300000"),
+        axis.text.y = element_text(size = 80, family = font, face = "bold", colour = "#300000"),
+        legend.position = "top",
+        legend.direction = "horizontal",
+        legend.background = element_blank(),
+        legend.key = element_rect(fill="#f5eee3"),
+        legend.title = element_text(face = "bold", family = font, size = 100, colour = "#300000"),
+        legend.text = element_text(size = 100, family = font, colour = "#300000"),
+        legend.margin = margin(1.5, 1, 1.25, 1, "cm"),
+        legend.key.width = unit(3.5, "cm")) +
+  guides(colour = "none",
+         size = guide_legend(override.aes = list(colour = "#300000"),
+                             title.position = "top",
+                             title.hjust = 0.5,
+                             label.position = "bottom",
+                             label.hjust = 0.5))
+
+ggsave("C:/Users/PC/Desktop/Portfolio/Pell Grants/HBCUPellGrants.png", width = 35, height = 45)
+ 
+```
+
+
+
+

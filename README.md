@@ -41,3 +41,6 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 
 ### [Aspen-Festival-Speakers](./Aspen-Festival-Speakers)
 
+--- 
+# [HBCU-PELL-GRANTS](./HBCU-PELL-GRANTS)
+
