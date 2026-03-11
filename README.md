@@ -43,6 +43,6 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 ![Network](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/Aspen-Festival-Speakers/concurrent%20occupations.PNG)
 
 --- 
-# [HBCU-PELL-GRANTS](./HBCU-PELL-GRANTS)
+### [HBCU-PELL-GRANTS](./HBCU-PELL-GRANTS)
 ![pell grants](https://github.com/RachaelKilonzo/Data-Science-Portfolio/blob/main/HBCU-PELL-GRANTS/HBCUPellGrants.png)
 
