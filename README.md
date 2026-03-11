@@ -31,6 +31,7 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 ### VORONOI OF UNESCO CULTURAL HERITAGE SITES
  [Voronoi Tree Map of the total UNESCO heritage sites found in each country.](./Voronoi-of-UNESCO-cultural-heritage-sites) 
 
-### Sentimeent Analysis on Death Note.
+ ---
 
+### [Sentiment Analysis on Death Note](./Sentiment-Analysis)
 ![word cloud](https://user-images.githubusercontent.com/93233240/145253323-18d33381-3111-4479-a6af-8464b2ca2b59.png)
