@@ -1,0 +1,309 @@
+---
+title: "Occupation of Aspen Speakers"
+author: "Rachael Kilonzo"
+date: "2024-06-29"
+output: html_document
+---
+
+Change the appearance of r studio
+```{r}
+
+# install the pseudo-package from this Github repository
+devtools::install_github("max-alletsee/rstudio-themes")
+
+library(rstudiothemes) # load the library
+
+install_rstudio_themes(theme="all_dark", globally = TRUE)
+
+```
+
+
+
+```{r}
+
+# Install necessary packages
+
+install.packages("lubridate") # A package for working with dates and times
+install.packages("plotly") # A package for creating interactive plots
+install.packages("RColorBrewer") # A package for creating color palettes
+install.packages("recommenderlab") # A package for recommendation systems
+install.packages("reticulate")
+install.packages("spacyr") # A package for working with natural language processing
+install.packages("stringr") # A package for string manipulation
+install.packages("tidytext") # A package for working with tidy data
+install.packages("tidyverse") # A package for data manipulation and visualization
+install.packages("UpSetR") # A package for creating UpSet plots
+install.packages("sqldf")
+
+
+
+```
+
+
+
+
+```{r}
+
+library(lubridate)
+library(igraph)
+library(plotly)
+library(purrr)
+library(RColorBrewer)
+library(recommenderlab)
+library(reticulate)
+library(rvest) # Was installed along with tidyverse
+library(stringr)
+library(tidytext)
+library(tidyverse)
+library(UpSetR)
+library(sqldf)
+library(ggraph)
+library(ggforce)
+
+```
+
+
+
+```{r}
+
+# Define the URL for the Aspen Festival speakers page
+url = "https://www.aspenideas.org/speakers?year=all&view=list"
+
+# Use rvest to read the webpage content
+webpage = read_html(url)
+
+```
+
+
+
+```{r}
+
+# Extract speaker information
+aspen = webpage %>%
+  html_nodes(".o-list_speakers_grid__item") %>%
+  lapply(function(item) {
+    name = item %>% html_node(".o-list_speakers_grid__name a") %>% html_text()
+    creds = item %>% html_node(".o-list_speakers_grid__creds") %>% html_text()
+    data.frame(Speaker = name, Credentials = creds, stringsAsFactors = FALSE)
+  }) %>%
+  bind_rows()
+
+```
+
+
+
+```{r}
+
+# Remove rows where the speakers' names are NA
+aspen = aspen %>%
+  filter(!is.na(Speaker))
+
+# Remove rows where the speakers' credentials are empty
+aspen = na.omit(aspen[aspen$Credentials != "", ])
+
+# Convert to tibble and add index column
+aspen = tibble::rownames_to_column(as.data.frame(aspen), var = "Index")
+
+# Drop the index column
+aspen = aspen[, -which(names(aspen) == "Index")]
+
+
+# Remove leading, trailing, and excessive whitespace within names
+aspen = aspen %>%
+  mutate(Speaker = str_trim(Speaker),          # Remove leading and trailing whitespace
+         Speaker = str_replace_all(Speaker, "\\s+", " ")) # Replace multiple spaces with a single space
+
+
+```
+
+
+Split speaker occupation by ;
+
+```{r}
+
+occupations = c("activist", "Activist", "Actor", "Actress", "Administrator", "Admiral", "Advisor", "Advocate", "Alumni", "Alumnus", "Ambassador", "Analyst", "Anchor", "Announcer", "Architect", "Artist", "Artistic Director", "Assistant", "Astronaut", "Astrophysicist", "Attorney", "Author", "Band", "Board Member", "Board of Trustees Member", "Bureau Chief", "Business Officer", "Cellist", "CEO", "Chair", "Chairman", "Chairwoman", "Chancellor", "Chaplain", "Chef", "Chief", "Chief of Staff", "Climber", "Clinical Trials Officer", "Co-Artistic Director", "Co-Chair", "Co-Chief", "Co-Creator", "Co-founder", "Co-Founder", "Coach", "Columnist", "Commentator", "Commercial Officer", "Commissioner", "Communications and Impact Officer", "Composer", "Congressman", "Conservationist", "Consultant", "Consultant", "Contractor", "Contributor", "Coordinator", "Correspondent", "Correspondent", "Council", "Counsel", "Counsel", "Country music duo", "Creative Officer", "Creator", "Curator", "Data Officer", "Dean", "Design Chief", "Designer", "Developer", "Digital Officer", "Diplomat", "Director", "Diversity Officer", "Drummer", "Economist", "Editor", "Education Assistant", "Education Manager", "Engineer", "Entrepreneur", "Essayist", "Executive", "Farmer", "Fashion Designer", "Fellow", "Filmaker", "Filmmaker", "Financial Officer", "First Lady", "Forager", "Founder", "Governor", "Guitarist", "Head", "Health Equity Officer", "Heat Officer", "Historian", "host", "Host", "Impact Officer", "Information Officer", "Innovation Officer", "Instructor of Neurosurgery", "International Partners", "inventor", "Investigator", "Investment Officer", "Investor", "Journalism Major", "Journalist", "Lawyer", "Lead", "Leader", "Lecturer", "Legal Officer", "Librarian", "Lieutenant", "Manager", "Manager", "Mandolinist", "Marketing Officer", "Mayor", "Medical Officer", "Minister", "Model", "Mountaineer", "Musician", "Novelist", "Nursing Officer", "Olympic", "Operating Officer", "Operations Officer", "Owner", "Partner", "Partner", "Pastor", "Philanthropist", "Photographer", "Photojournalist", "Physician", "Pianist", "player", "Player", "Podcast Host", "Policy Advisor", "Policy Programs", "Pollster", "President", "Prime Minister", "Principal", "Producer", "Product Officer", "Professor", "Program Officer", "Promotion Officer", "Provost", "Psychiatrist", "Psychologist", "Quarterback", "Rabbi", "Rapper", "Recorder", "Reporter", "Representative", "Research Associate", "Research Officer", "Research Scientist", "Research Specialist", "Researcher", "Resident", "Restaurateur", "Scholar", "Scientist", "Screenwriter", "Second Gentleman", "Secretary", "Secretary of State", "Senate", "Senator", "Services Specialist", "Sheriff", "Singer", "singer-songwriter", "Songwriter", "Soprano", "Spokesperson", "Sportscaster", "Strategist", "Strategist", "Strategy Officer", "Student", "Superintendent", "Surgeon", "Teacher", "Technology Officer", "TikToker", "Trader", "Treasurer", "Trustee", "Undersecretary", "Underwriter", "Vice Chair", "Vice Chairman", "Vice President", "Violinist", "Visual Artist", "VP", "Writer")
+
+
+```
+
+
+
+```{r}
+
+# Function to match occupations
+match_occupations = function(credentials, occupations) {
+  matched = str_extract_all(credentials, str_c(occupations, collapse = "|")) %>% unlist() %>% unique()
+  paste(matched, collapse = ", ")
+}
+
+# Create a new column with matched occupations
+aspen = aspen %>%
+  mutate(Occupation = sapply(Credentials, match_occupations, occupations = occupations))
+
+aspen$Occupation = tolower(aspen$Occupation)
+
+# Remove rows where the speakers' credentials are empty. These were impossible to figure out
+aspen = na.omit(aspen[aspen$Occupation != "", ])
+
+
+```
+
+
+
+```{r}
+
+patternreplace = function(x, patterns, replacements = patterns, fill = NA, ...) {
+  stopifnot(length(patterns) == length(replacements))
+  ans = rep_len(as.character(fill), length(x))    
+  empty = seq_along(x)
+
+  for(i in seq_along(patterns)) {
+    greps = grepl(patterns[[i]], x[empty], ..., ignore.case = T)
+    ans[empty[greps]] = replacements[[i]]  
+    empty = empty[!greps]
+  }
+  return(ans)
+}
+
+```
+
+
+
+
+```{r}
+
+top_occupations = aspen %>%
+  # Separate rows where multiple occupations are present
+  tidyr::separate_rows(Occupation, sep = ", ") %>%
+  # Count the occurrences of each occupation
+  dplyr::count(Occupation, sort = TRUE) %>%
+  # Select the top 30 occupations
+  head(30)
+
+
+```
+
+
+
+
+```{r}
+
+# Define the top 30 occupations and their standardizations
+from = c(top_occupations$Occupation)
+to = c(
+  "executive", "executive", "academic", "entrepreneur", "executive", "writer", "entrepreneur", 
+  "executive", "executive", "executive", "executive", "financial", "media", 
+  "writer", "academic", "business", "media", "leader", "creative", "media", 
+  "advisor", "assistant", "administrative", "leader", "media", "academic", 
+  "media", "media", "student", "representative"
+)
+
+# Standardize occupations
+aspen = aspen %>%
+  mutate(Occupation = strsplit(Occupation, ",|;|/")) %>%
+  unnest(Occupation) %>%
+  mutate(Occupation = trimws(tolower(Occupation))) %>%
+  mutate(Occupation = ifelse(grepl('co-founder|founder|ceo', Occupation), 'entrepreneur', Occupation)) %>%
+  mutate(Occupation2 = patternreplace(Occupation, from, to)) %>%
+  mutate(Occupation2 = ifelse(is.na(Occupation2), Occupation, Occupation2))
+
+
+```
+
+
+
+```{r}
+
+# Calculate co-occurrence of occupations
+co_occur = sqldf("
+  SELECT a.Occupation2 AS a, b.Occupation2 AS b, COUNT(*) AS cnt
+  FROM aspen a 
+  JOIN aspen b 
+  ON b.Speaker = a.Speaker AND b.Occupation2 > a.Occupation2
+  GROUP BY a.Occupation2, b.Occupation2
+  HAVING cnt > 1  -- Filter out co-occurrences with cnt = 1
+  ORDER BY cnt DESC  -- Sort by count in descending order
+")
+
+# Create a graph from the co-occurrence data
+g = co_occur %>% 
+  graph_from_data_frame()
+
+# Calculate and assign popularity (degree) to vertices
+V(g)$Popularity = degree(g)
+
+# Output the number of unique occupation names in the graph
+length(V(g)$name)
+
+# Print number of nodes and edges
+cat("Number of nodes:", vcount(g), "\n")
+cat("Number of edges:", ecount(g), "\n")
+
+
+```
+
+
+
+
+```{r}
+
+my_theme = function(base_size = 16, base_family = "Helvetica") {
+  theme_minimal() +
+    theme(
+      axis.title.y = element_blank(),
+      axis.title.x = element_blank(),
+      plot.title = element_text(face = "bold", size = 14),
+      axis.text = element_blank(),  # Remove axis text
+      axis.ticks = element_blank(),  # Remove axis ticks
+      panel.grid.major = element_blank(),  # Remove major grid lines
+      panel.grid.minor = element_blank(),  # Remove minor grid lines
+      plot.background = element_rect(fill = '#300000', color = '#300000'),  # Burgundy red background
+      legend.position = 'None',
+      legend.title = element_blank()
+    )
+}
+
+g %>%
+  ggraph(layout = 'fr') +
+  geom_edge_link(aes(edge_alpha = cnt), edge_colour = 'white', show.legend = FALSE) +
+  geom_edge_density(aes(fill = '#300000')) + 
+  geom_node_point(color = "white", aes(size = Popularity*0.5)) +
+  geom_node_text(color = "white", aes(label = ifelse(Popularity >= 10, name, '')), size = 3, repel = TRUE, max.overlaps = Inf) +
+  theme_void() + 
+  my_theme() +  # Apply your custom theme here
+  coord_equal()
+
+
+```
+
+
+
+```{r}
+
+# Subset the graph to include nodes with high popularity (>= 4)
+g_sub <- subgraph.edges(g, E(g)[inc(V(g)$Popularity >= 5)])
+
+# Plotting the subgraph with high popularity nodes
+g_sub %>%
+  ggraph(layout = 'fr') +
+  geom_edge_link(aes(edge_alpha = cnt), edge_colour = 'white', show.legend = FALSE) +
+  geom_edge_density(aes(fill = 'white')) + 
+  geom_node_point(color = "white", aes(size = Popularity*0.5)) +
+  geom_node_text(color = "cyan", aes(label = ifelse(Popularity >= 5 & Popularity < 11, name, '')), size = 2, repel = TRUE) +
+  geom_node_text(color = "limegreen", aes(label = ifelse(Popularity >= 11, name, '')), size = 3, fontface = 'bold', repel = TRUE) +
+  theme_void() + 
+  theme(legend.position = 'None',
+        plot.background = element_rect(fill = '#300000', color = '#300000'),  # Burgundy red background
+        plot.margin = unit(c(1.2, 1.2, 1.2, 1.2), "cm")) + 
+  coord_equal() +
+  my_theme()
+
+
+```
+
+
+
+
+
+
+

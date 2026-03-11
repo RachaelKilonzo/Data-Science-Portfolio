@@ -1,4 +1,5 @@
 
+
 # Data-Science-Portfolio
 
 A curated collection of data science projects focusing on Exploratory Data Analysis (EDA), Web Scraping, Sentiment Analysis, and Data Visualization. Includes diverse datasets ranging from Olympic sports and urban mobility to literary analysis and public health trends. Built with Python, R, and Jupyter Notebooks to showcase data storytelling.
@@ -34,3 +35,8 @@ This project utilizes web scraping (BeautifulSoup) to retrieve information about
 ### Sentimeent Analysis on Death Note.
 
 ![word cloud](https://user-images.githubusercontent.com/93233240/145253323-18d33381-3111-4479-a6af-8464b2ca2b59.png)
+
+---
+
+### [Aspen-Festival-Speakers](./Aspen-Festival-Speakers)
+
